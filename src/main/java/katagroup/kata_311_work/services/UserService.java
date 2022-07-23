@@ -2,7 +2,6 @@ package katagroup.kata_311_work.services;
 
 import katagroup.kata_311_work.models.User;
 import katagroup.kata_311_work.repositories.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,10 +11,10 @@ public class UserService {
 
     private final UserRepository userRepository;
 
-    @Autowired
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
+
     public void addUser(User newUser){
         userRepository.saveAndFlush(newUser);
     }
